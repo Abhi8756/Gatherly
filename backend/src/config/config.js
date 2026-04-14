@@ -1,0 +1,18 @@
+// Configuration file
+module.exports = {
+  jwt: {
+    secret: process.env.JWT_SECRET || 'your_super_secret_jwt_key_change_this_in_production',
+    expiresIn: '24h',
+  },
+  roles: {
+    ADMIN: 'Admin',
+    ORGANIZER: 'Organizer',
+    PARTICIPANT: 'Participant',
+    GUEST: 'Guest',
+  },
+  eventStatus: {
+    PENDING: 'Pending',
+    APPROVED: 'Approved',
+    REJECTED: 'Rejected',
+  },
+};
