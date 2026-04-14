@@ -1,0 +1,119 @@
+/* Footer */
+.footer {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  color: white;
+  padding: 40px 20px;
+  text-align: center;
+  margin-top: auto;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.footer .container {
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  text-align: center;
+  flex: 1;
+  min-width: 200px;
+}
+
+.footer-section h4 {
+  font-size: 16px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  color: white;
+  text-transform: uppercase;
+}
+
+.footer-section p {
+  margin: 6px 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.6;
+}
+
+.footer-section a {
+  color: #f0f4f8;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+}
+
+.footer-section a:hover {
+  color: #6366f1;
+  text-decoration: underline;
+}
+
+.footer-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.1);
+  margin: 20px 0;
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-bottom p strong {
+  color: #6366f1;
+  font-weight: 700;
+}
+
+.footer-brand {
+  font-size: 20px;
+  font-weight: 900;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+.footer-social {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 12px;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(99, 102, 241, 0.2);
+  border-radius: 50%;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 18px;
+}
+
+.footer-social a:hover {
+  background: #6366f1;
+  transform: translateY(-3px);
+  text-decoration: none;
+}
+
+@media (max-width: 768px) {\n  .footer {\n    padding: 30px 16px;\n  }\n\n  .footer-content {\n    gap: 20px;\n    margin-bottom: 20px;\n  }\n\n  .footer-section {\n    min-width: 100%;\n  }\n\n  .footer-bottom {\n    flex-direction: column;\n    gap: 8px;\n  }\n\n  .footer-bottom p {\n    font-size: 12px;\n  }\n}

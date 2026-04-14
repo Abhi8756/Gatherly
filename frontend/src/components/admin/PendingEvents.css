@@ -1,0 +1,190 @@
+/* Pending Events Admin */
+.pending-events-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+}
+
+.pending-events-container h2 {
+  font-size: 42px;
+  margin-bottom: 15px;
+  color: #1a202c;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  text-align: center;
+}
+
+.pending-subtitle {
+  text-align: center;
+  color: #64748b;
+  font-size: 18px;
+  margin-bottom: 40px;
+  font-weight: 500;
+}
+
+.pending-events-list {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.pending-event-card {
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  gap: 28px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n  border: 1px solid #f0f4f8;
+  position: relative;
+  overflow: hidden;
+}
+
+.pending-event-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #6366f1, #ec4899);
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.pending-event-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.12);
+  border-color: #e0e7ff;
+}
+
+.pending-event-card:hover::before {
+  transform: scaleX(1);
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-info h3 {
+  font-size: 24px;
+  color: #1a202c;
+  margin-bottom: 12px;
+  font-weight: 700;
+}
+
+.event-info .description {
+  color: #64748b;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-bottom: 18px;
+}
+
+.event-meta {
+  background: linear-gradient(135deg, #f8fafc, #f0f4f8);
+  padding: 18px;
+  border-radius: 10px;
+  font-size: 14px;
+  border-left: 4px solid #6366f1;
+}
+
+.event-meta p {
+  margin: 8px 0;
+  color: #475569;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.event-meta strong {
+  color: #1a202c;
+  font-weight: 700;
+}
+
+.action-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  justify-content: flex-start;
+  min-width: 160px;
+  flex-shrink: 0;
+}
+
+.action-buttons .btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 50px;
+  font-size: 14px;
+  font-weight: 700;
+  border-radius: 10px;
+  border: none;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.action-buttons .btn-success {
+  background: linear-gradient(135deg, #10b981, #34d399);
+  color: white;
+}
+
+.action-buttons .btn-success:hover {
+  background: linear-gradient(135deg, #059669, #34d399);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(16, 185, 129, 0.3);
+}
+
+.action-buttons .btn-danger {
+  background: linear-gradient(135deg, #ef4444, #f87171);
+  color: white;
+}
+
+.action-buttons .btn-danger:hover {
+  background: linear-gradient(135deg, #dc2626, #f87171);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(239, 68, 68, 0.3);
+}
+
+.no-events {
+  text-align: center;
+  padding: 60px 20px;
+  color: #64748b;
+  font-size: 18px;
+  background: white;
+  border-radius: 14px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+@media (max-width: 768px) {
+  .pending-events-container {\n    padding: 24px 16px;
+  }
+
+  .pending-events-container h2 {
+    font-size: 32px;
+  }
+
+  .pending-event-card {
+    flex-direction: column;
+    gap: 16px;
+    padding: 20px;
+  }
+
+  .action-buttons {
+    flex-direction: row;
+    min-width: auto;
+  }
+
+  .action-buttons .btn {
+    flex: 1;
+    min-height: 44px;
+    font-size: 13px;
+  }
+}
