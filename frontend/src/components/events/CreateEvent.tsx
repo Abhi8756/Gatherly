@@ -47,11 +47,6 @@ const CreateEvent: React.FC = () => {
         setLoading(false);
         return;
       }
-      if (!formData.description.trim()) {
-        setError('Event description is required');
-        setLoading(false);
-        return;
-      }
       if (!formData.date) {
         setError('Event date is required');
         setLoading(false);
@@ -92,9 +87,20 @@ const CreateEvent: React.FC = () => {
         navigate('/my-events');
       }, 2000);
     } catch (err: any) {
-      const errorMsg = err.response?.data?.error || err.response?.data?.message || 'Failed to create event';
-      setError(errorMsg);
       console.error('Event creation error:', err);
+      console.error('Error response:', err.response?.data);
+      
+      // Handle different error formats
+      let errorMsg = 'Failed to create event';
+      if (err.response?.data?.errors && Array.isArray(err.response.data.errors)) {
+        errorMsg = err.response.data.errors.map((e: any) => e.msg || e.message || e).join(', ');
+      } else if (err.response?.data?.error) {
+        errorMsg = err.response.data.error;
+      } else if (err.response?.data?.message) {
+        errorMsg = err.response.data.message;
+      }
+      
+      setError(errorMsg);
     } finally {
       setLoading(false);
     }

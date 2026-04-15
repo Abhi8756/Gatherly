@@ -75,9 +75,16 @@ exports.createEvent = async (req, res) => {
 
     console.log('Creating event with data:', { title, description, eventType, date, time, location, capacity });
 
+    // Validate required fields
+    if (!title || !date || !time || !location || !capacity) {
+      return res.status(400).json({ 
+        error: 'Missing required fields. Please provide title, date, time, location, and capacity.' 
+      });
+    }
+
     const event = new Event({
       title,
-      description,
+      description: description || '', // Allow empty description
       eventType: eventType || 'other',
       date,
       time,

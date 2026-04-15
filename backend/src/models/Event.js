@@ -9,7 +9,7 @@ const eventSchema = new mongoose.Schema(
     },
     description: {
       type: String,
-      required: [true, 'Please provide an event description'],
+      required: false,
     },
     eventType: {
       type: String,
